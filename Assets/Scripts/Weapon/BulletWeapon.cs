@@ -7,7 +7,7 @@ namespace Weapons
     {
         [SerializeField] private Bullet _bullet;
 
-        public override void Fire(Transform transform)
+        protected override void Fire(Transform transform)
         {
             Bullet bullet = Instantiate(_bullet, transform.position, transform.rotation);
             bullet.Shot(transform.up);

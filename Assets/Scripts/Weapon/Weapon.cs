@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Weapons.Shells;
 
@@ -10,10 +11,10 @@ namespace Weapons
 
         private void Update()
         {
-            if (Input.GetKeyDown(_fireKey))
+            if(Input.GetKeyDown(_fireKey))
                 Fire(_firePoint);
         }
 
-        public abstract void Fire(Transform transform);
+        protected abstract void Fire(Transform firePoint);
     }
 }

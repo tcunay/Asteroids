@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Weapons.Shells
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Bullet : MonoBehaviour, IShell
+    public class Bullet : MonoBehaviour, ICharge
     {
         [SerializeField] private float _speedForce;
 

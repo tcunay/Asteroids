@@ -605,5 +605,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PLayer
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5653147428367408931, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}

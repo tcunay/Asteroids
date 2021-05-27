@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Weapons.Shells
 {
     [RequireComponent(typeof(LineRenderer))]
-    public class Laser : MonoBehaviour, IShell
+    public class Laser : MonoBehaviour, ICharge
     {
         [SerializeField] private float _distanceToRay;
 
