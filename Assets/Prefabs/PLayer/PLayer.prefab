@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5091663842466478425}
   - component: {fileID: 5091663842466478422}
   - component: {fileID: 5091663842466478421}
-  - component: {fileID: 2768374903658493727}
   - component: {fileID: 8276519007801473616}
+  - component: {fileID: 553234746978726346}
   m_Layer: 0
   m_Name: PLayer
   m_TagString: Untagged
@@ -162,21 +162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speedForce: 130
   _rotateSpeed: 200
---- !u!114 &2768374903658493727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5091663842466478424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46e805311ca08654fa3e59d11201e621, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fireKey: 324
-  _firePoint: {fileID: 2671067724200614312}
-  _laser: {fileID: 3479241318122232178, guid: 3ea90b905f220c446bedc5f1e5bf8bfd, type: 3}
 --- !u!114 &8276519007801473616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +177,21 @@ MonoBehaviour:
   _fireKey: 323
   _firePoint: {fileID: 2671067724200614312}
   _bullet: {fileID: 5817030990151720273, guid: 9eccc3ce4a0d0df49a3a9a8f95f87a3d, type: 3}
+--- !u!114 &553234746978726346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091663842466478424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e805311ca08654fa3e59d11201e621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireKey: 324
+  _firePoint: {fileID: 2671067724200614312}
+  _laser: {fileID: 3479241318122232178, guid: 3ea90b905f220c446bedc5f1e5bf8bfd, type: 3}
 --- !u!1 &8002369598743345020
 GameObject:
   m_ObjectHideFlags: 0

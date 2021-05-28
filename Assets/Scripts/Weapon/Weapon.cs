@@ -9,7 +9,7 @@ namespace Weapons
         [SerializeField] private KeyCode _fireKey;
         [SerializeField] private Transform _firePoint;
 
-        private void Update()
+        protected virtual void Update()
         {
             if(Input.GetKeyDown(_fireKey))
                 Fire(_firePoint);

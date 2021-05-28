@@ -13,21 +13,24 @@ namespace Weapons
         private float _oneAddChargeTime = 5f;
         private bool _isReplenished = false;
 
-        private void Update()
+        protected override void Update()
         {
+            base.Update();
+
             TryAddCharge();
         }
 
-        protected override void Fire(Transform transform)
+        protected override void Fire(Transform firePoint)
         {
-            if (_chargesQuantity > 0)
+            if(_chargesQuantity > 0)
             {
                 Laser laser = Instantiate(_laser, transform);
-                laser.Shot(transform.localPosition);
+                laser.Shot(firePoint.localPosition);
 
                 _chargesQuantity--;
             }
         }
+
         private void TryAddCharge()
         {
             if (_chargesQuantity < _maxChargesQuantity && _isReplenished == false)

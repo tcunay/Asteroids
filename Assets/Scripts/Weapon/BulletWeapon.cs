@@ -7,10 +7,10 @@ namespace Weapons
     {
         [SerializeField] private Bullet _bullet;
 
-        protected override void Fire(Transform transform)
+        protected override void Fire(Transform firePoint)
         {
-            Bullet bullet = Instantiate(_bullet, transform.position, transform.rotation);
-            bullet.Shot(transform.up);
+            Bullet bullet = Instantiate(_bullet, firePoint.position, firePoint.rotation);
+            bullet.Shot(firePoint.up);
         }
     }
 }
