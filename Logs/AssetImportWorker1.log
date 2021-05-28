@@ -2981,3 +2981,4 @@ Received Import Request.
 Start importing Assets/Scripts/Weapon/Weapon.cs using Guid(de285440dcc295d4983e1adcc197993c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39d24628a054ad271cde5d41722b5c9e') in 0.002231 seconds
   Import took 0.005689 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
