@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(LineRenderer))]
 public abstract class ShapeCreator<T> : MonoBehaviour
@@ -9,6 +10,9 @@ public abstract class ShapeCreator<T> : MonoBehaviour
 
     private T _collider2D;
     private LineRenderer _lineRenderer;
+    private Vector3[] _angleClosedPoints;
+
+    public event UnityAction<Vector3[]> Creating;
 
     private void Awake()
     {
@@ -33,10 +37,12 @@ public abstract class ShapeCreator<T> : MonoBehaviour
     {
         _lineRenderer.positionCount = _sidesQuantity + 1;
 
-        Vector3[] angleClosedPoints = CalculatePoints();
+        _angleClosedPoints = CalculatePoints();
 
-        SetPointsInCollider(ConvertToVector2DArray(angleClosedPoints), _collider2D);
-        _lineRenderer.SetPositions(angleClosedPoints);
+        SetPointsInCollider(ConvertToVector2DArray(_angleClosedPoints), _collider2D);
+        _lineRenderer.SetPositions(_angleClosedPoints);
+
+        Creating?.Invoke(_angleClosedPoints);
     }
 
     private Vector3[] CalculatePoints()
@@ -74,15 +80,15 @@ public abstract class ShapeCreator<T> : MonoBehaviour
 
     private Vector2[] ConvertToVector2DArray(Vector3[] points)
     {
-        Vector2[] edgePoints = new Vector2[points.Length];
+        Vector2[] points2D = new Vector2[points.Length];
 
-        for (int i = 0; i < edgePoints.Length; i++)
+        for (int i = 0; i < points2D.Length; i++)
         {
-            edgePoints[i].x = points[i].x;
-            edgePoints[i].y = points[i].y;
+            points2D[i].x = points[i].x;
+            points2D[i].y = points[i].y;
         }
 
-        return edgePoints;
+        return points2D;
     }
 
     private float GetRandomRadius()

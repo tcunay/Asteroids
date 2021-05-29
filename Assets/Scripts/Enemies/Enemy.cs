@@ -5,7 +5,7 @@ namespace Enemies
 {
     public abstract class Enemy : MonoBehaviour
     {
-        public event UnityAction Died;
+        public event UnityAction<Enemy> Died;
 
         public virtual void Die()
         {
@@ -14,7 +14,7 @@ namespace Enemies
 
         private void OnDestroy()
         {
-            Died?.Invoke();
+            Died?.Invoke(this);
         }
     }
 }

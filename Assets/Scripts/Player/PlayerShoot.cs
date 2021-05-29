@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using Weapons;
 
@@ -15,6 +14,7 @@ namespace Player
             _player = GetComponent<Player>();
             _weapons = GetComponents<Weapon>();
         }
+
         private void OnEnable()
         {
             if (_weapons != null)
@@ -23,6 +23,7 @@ namespace Player
                     item.Killed += AddPointToPlayer;
                 }
         }
+
         private void OnDisable()
         {
             if (_weapons != null)
