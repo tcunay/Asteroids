@@ -1,22 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Enemies;
+using UnityEngine.Events;
 
 namespace Player
 {
     public class Player : MonoBehaviour
     {
-        private int _health;
+        public event UnityAction Dying;
 
-        private void ApplyDamage(int damage)
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (damage >= 0)
-                _health -= damage;
+            if (collision.gameObject.TryGetComponent(out IEnemy enemy))
+                Die();
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void Die()
         {
-
+            Dying?.Invoke();
         }
     }
 }

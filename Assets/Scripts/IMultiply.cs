@@ -1,5 +1,5 @@
 
 public interface IMultiply
 {
-    void Multiply();
+    void TryMultiply();
 }

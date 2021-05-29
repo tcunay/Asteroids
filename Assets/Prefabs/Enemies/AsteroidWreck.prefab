@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -4569352568735481789}
   - component: {fileID: 4463161099202636654}
   - component: {fileID: 8718908078860197702}
+  - component: {fileID: -9052855258911523756}
   - component: {fileID: 9175266024388599039}
   - component: {fileID: -3109690978439928026}
   m_Layer: 0
@@ -183,6 +184,18 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!114 &-9052855258911523756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8718908078860197689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30db9b22310639b4e9a1e226b0abcfab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &9175266024388599039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5d19fb03cab8743916dad7bd27f9e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minRadius: 0.7
-  _maxRadius: 2
+  _minRadius: 0.5
+  _maxRadius: 1.5
   _sidesQuantity: 6
