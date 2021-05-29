@@ -1,13 +1,11 @@
 using System.Collections;
 using UnityEngine;
-using Weapons.Shells;
+using Weapons.Ammunition;
 
 namespace Weapons
 {
     public class LaserWeapon : Weapon
     {
-        [SerializeField] private Laser _laser;
-
         private int _maxChargesQuantity = 5;
         private int _chargesQuantity;
         private float _oneAddChargeTime = 5f;
@@ -16,17 +14,15 @@ namespace Weapons
         protected override void Update()
         {
             base.Update();
-
             TryAddCharge();
         }
 
-        protected override void Fire(Transform firePoint)
+        protected override void Shoot(Ammo ammo, Transform firePoint)
         {
-            if(_chargesQuantity > 0)
+            if(true)//(_chargesQuantity > 0)
             {
-                Laser laser = Instantiate(_laser, transform);
-                laser.Shot(firePoint.localPosition);
-
+                Ammo laser = Instantiate(ammo, firePoint);
+                AddList(laser);
                 _chargesQuantity--;
             }
         }

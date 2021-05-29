@@ -8,6 +8,8 @@ namespace Player
 {
     public class Player : MonoBehaviour
     {
+        private int _score;
+
         public event UnityAction Dying;
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -19,6 +21,11 @@ namespace Player
         private void Die()
         {
             Dying?.Invoke();
+        }
+
+        public void AddScore()
+        {
+            _score++;
         }
     }
 }

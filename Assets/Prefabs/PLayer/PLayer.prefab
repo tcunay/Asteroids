@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5091663842466478421}
   - component: {fileID: 8276519007801473616}
   - component: {fileID: 553234746978726346}
+  - component: {fileID: -5940459294983903286}
   m_Layer: 0
   m_Name: PLayer
   m_TagString: Untagged
@@ -129,7 +130,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0.5
-  m_AngularDrag: 1
+  m_AngularDrag: 5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -161,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedForce: 130
-  _rotateSpeed: 50
+  _rotateSpeed: 100
 --- !u!114 &8276519007801473616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,9 +175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c52fb797ae2da9043a3d180bfe80dbb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fireKey: 323
+  _ammo: {fileID: 0}
   _firePoint: {fileID: 2671067724200614312}
-  _bullet: {fileID: -9191401121113869798, guid: 58459731eae466a42848bb2a0a5e7a3c, type: 3}
+  _fireKey: 323
 --- !u!114 &553234746978726346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,9 +190,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e805311ca08654fa3e59d11201e621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fireKey: 324
+  _ammo: {fileID: 0}
   _firePoint: {fileID: 2671067724200614312}
-  _laser: {fileID: 3479241318122232178, guid: 3ea90b905f220c446bedc5f1e5bf8bfd, type: 3}
+  _fireKey: 324
+--- !u!114 &-5940459294983903286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091663842466478424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fddb83040a502c4c9564d3ca535709c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8002369598743345020
 GameObject:
   m_ObjectHideFlags: 0

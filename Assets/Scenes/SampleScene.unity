@@ -428,6 +428,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 553234746978726346, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: 3479241318122232178, guid: 3ea90b905f220c446bedc5f1e5bf8bfd, type: 3}
     - target: {fileID: 5091663842466478420, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -472,17 +476,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5091663842466478421, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}
-      propertyPath: _rotateSpeed
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 5091663842466478424, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}
       propertyPath: m_Name
       value: PLayer
       objectReference: {fileID: 0}
-    - target: {fileID: 5091663842466478425, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}
-      propertyPath: m_AngularDrag
-      value: 5
-      objectReference: {fileID: 0}
+    - target: {fileID: 8276519007801473616, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: -9191401121113869798, guid: 58459731eae466a42848bb2a0a5e7a3c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}

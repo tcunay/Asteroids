@@ -1,20 +1,43 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
-using Weapons.Shells;
+using UnityEngine.Events;
+using Weapons.Ammunition;
 
 namespace Weapons
 {
     public abstract class Weapon : MonoBehaviour
     {
-        [SerializeField] private KeyCode _fireKey;
+        [SerializeField] private Ammo _ammo;
         [SerializeField] private Transform _firePoint;
+        [SerializeField] private KeyCode _fireKey;
+
+        private List<Ammo> _ammos = new List<Ammo>();
+
+        public event UnityAction Killed;
 
         protected virtual void Update()
         {
-            if(Input.GetKeyDown(_fireKey))
-                Fire(_firePoint);
+            if (Input.GetKeyDown(_fireKey))
+                Shoot(_ammo, _firePoint);
         }
 
-        protected abstract void Fire(Transform firePoint);
+        protected void AddList(Ammo ammo)
+        {
+            _ammos.Add(ammo);
+            ammo.Killed += ReportKilling;
+        }
+
+        protected void RemoveList(Ammo ammo)
+        {
+            _ammos.Remove(ammo);
+            ammo.Killed -= ReportKilling;
+        }
+
+        private void ReportKilling()
+        {
+            Killed?.Invoke();
+        }
+
+        protected abstract void Shoot(Ammo ammo, Transform firePoint);
     }
 }

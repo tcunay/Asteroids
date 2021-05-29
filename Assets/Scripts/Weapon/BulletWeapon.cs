@@ -1,16 +1,15 @@
 using UnityEngine;
-using Weapons.Shells;
+using Weapons.Ammunition;
 
 namespace Weapons
 {
     public class BulletWeapon : Weapon
     {
-        [SerializeField] private Bullet _bullet;
-
-        protected override void Fire(Transform firePoint)
+        protected override void Shoot(Ammo ammo, Transform firePoint)
         {
-            Bullet bullet = Instantiate(_bullet, firePoint.position, firePoint.rotation);
-            bullet.Shot(firePoint.up);
+            Ammo bullet = Instantiate(ammo, firePoint.position, firePoint.rotation);
+
+            AddList(bullet);
         }
     }
 }

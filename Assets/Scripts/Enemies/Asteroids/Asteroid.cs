@@ -3,12 +3,12 @@ using UnityEngine.Events;
 
 namespace Enemies
 {
-    public class Asteroid : MonoBehaviour, IEnemy, IMultiply
+    public class Asteroid : Enemy, IMultiply
     {
-        public void Die()
+        public override void Die()
         {
             TryMultiply();
-            Destroy(gameObject);
+            base.Die();
         }
 
         public void TryMultiply()
