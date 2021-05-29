@@ -16,14 +16,10 @@ namespace Player
             _rigidbody = GetComponent<Rigidbody2D>();
         }
 
-        private void Update()
-        {
-            Rotate(GetRotateDirection());
-        }
-
         private void FixedUpdate()
         {
             Move(GetEngine());
+            Rotate(GetTourqe());
         }
 
         private void Move(int engine)
@@ -39,15 +35,14 @@ namespace Player
                 return 0;
         }
 
-        private void Rotate(Vector3 direction)
+        private void Rotate(float tourqe)
         {
-            transform.Rotate(direction * _rotateSpeed * Time.deltaTime, Space.World);
+            _rigidbody.AddTorque(tourqe * _rotateSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
         }
 
-        private Vector3 GetRotateDirection()
+        private float GetTourqe()
         {
-            float direction = Input.GetAxis("Horizontal");
-            return new Vector3(0, 0, -direction);
+            return -Input.GetAxis("Horizontal");
         }
     }
 }
