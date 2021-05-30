@@ -28,12 +28,6 @@ namespace ShapeCreators
             Create();
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-                Create();
-        }
-
         protected abstract void SetPointsInCollider(Vector2[] points, T collider2D);
 
         public void Create()

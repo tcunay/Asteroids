@@ -36,9 +36,9 @@ public class Spawner : MonoBehaviour
         if (_isSpawnPointsCompleted == false)
             return;
 
-        _elapsedTime += Time.deltaTime;
         if (IsFull() == false)
         {
+            _elapsedTime += Time.deltaTime;
             if (_elapsedTime >= _secondsBetweenSpawn)
             {
                 Spawn();

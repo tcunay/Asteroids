@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace Players
 {
-
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerMover : MonoBehaviour
     {
@@ -10,39 +9,47 @@ namespace Players
         [SerializeField] private float _rotateSpeed;
 
         private Rigidbody2D _rigidbody;
+        private float _tourque;
+        private float _engine;
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
         }
 
+        private void Update()
+        {
+            //SetEngine();
+            //SetTourqe();
+        }
+
         private void FixedUpdate()
         {
-            Move(GetEngine());
-            Rotate(GetTourqe());
+            Move();
+            Rotate();
         }
 
-        private void Move(int engine)
+        private void Move()
         {
-            _rigidbody.AddForce(transform.up * engine * _speedForce * Time.fixedDeltaTime, ForceMode2D.Force);
+            _rigidbody.AddForce(transform.up * _engine * _speedForce * Time.fixedDeltaTime, ForceMode2D.Force);
         }
 
-        private int GetEngine()
+        public void SetEngine(bool isEngine)
         {
-            if (Input.GetKey(KeyCode.W))
-                return 1;
+            if (isEngine)
+                _engine = 1;
             else
-                return 0;
+                _engine = 0;
         }
 
-        private void Rotate(float tourqe)
+        private void Rotate()
         {
-            _rigidbody.AddTorque(tourqe * _rotateSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
+            _rigidbody.AddTorque(_tourque * _rotateSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
         }
 
-        private float GetTourqe()
+        public void SetTourqe(float tourque)
         {
-            return -Input.GetAxis("Horizontal");
+            _tourque = tourque;
         }
     }
 }

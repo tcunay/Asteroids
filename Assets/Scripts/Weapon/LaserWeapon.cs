@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using Weapons.Ammunition;
 
 namespace Weapons
@@ -10,6 +11,12 @@ namespace Weapons
         private int _chargesQuantity;
         private float _oneAddChargeTime = 5f;
         private bool _isReplenished = false;
+
+        public float OneAddChargeTime => _oneAddChargeTime;
+
+        public bool IsReplenished => _isReplenished;
+
+        public event UnityAction<int> ChargesChanged;
 
         protected override void Update()
         {
@@ -24,6 +31,7 @@ namespace Weapons
                 Ammo laser = Instantiate(ammo, firePoint);
                 AddList(laser);
                 _chargesQuantity--;
+                ChargesChanged?.Invoke(_chargesQuantity);
             }
         }
 
@@ -40,6 +48,7 @@ namespace Weapons
             yield return new WaitForSeconds(_oneAddChargeTime);
 
             _chargesQuantity++;
+            ChargesChanged?.Invoke(_chargesQuantity);
             _isReplenished = false;
         }
     }

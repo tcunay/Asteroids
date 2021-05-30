@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using Weapons.Ammunition;
 
 namespace Weapons
@@ -9,12 +10,22 @@ namespace Weapons
     {
         [SerializeField] private Ammo _ammo;
         [SerializeField] private Transform _firePoint;
+        [SerializeField] private Button _button;
         [SerializeField] private KeyCode _fireKey;
 
         private List<Ammo> _ammos = new List<Ammo>();
 
         public event UnityAction Killed;
 
+        private void OnEnable()
+        {
+            _button.onClick.AddListener(() => Shoot(_ammo, _firePoint));
+        }
+
+        private void OnDisable()
+        {
+            _button.onClick.RemoveListener(() => Shoot(_ammo, _firePoint));
+        }
         protected virtual void Update()
         {
             if (Input.GetKeyDown(_fireKey))
