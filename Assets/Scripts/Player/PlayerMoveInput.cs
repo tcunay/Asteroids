@@ -11,6 +11,8 @@ namespace Players
         [SerializeField] private LongPressButton _rightAxisButton;
 
         private PlayerMover _playerMover;
+        private float _rightAxisValue = -1;
+        private float _leftAxisValue = 1;
 
         private void Awake()
         {
@@ -34,9 +36,9 @@ namespace Players
         private void TryPressedRotateAxis()
         {
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || _leftAxisButton.IsPressed)
-                PressedRotateAxis(1);
+                PressedRotateAxis(_leftAxisValue);
             else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || _rightAxisButton.IsPressed)
-                PressedRotateAxis(-1);
+                PressedRotateAxis(_rightAxisValue);
             else
                 PressedRotateAxis(0);
 

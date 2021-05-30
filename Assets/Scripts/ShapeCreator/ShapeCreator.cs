@@ -92,11 +92,5 @@ namespace ShapeCreators
         {
             return Random.Range(_minRadius, _maxRadius);
         }
-
-        public void SetScale(float factor)
-        {
-            _minRadius *= factor;
-            _maxRadius *= factor;
-        }
     }
 }

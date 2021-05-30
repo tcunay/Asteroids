@@ -40,6 +40,7 @@ namespace Game
             _isGameOver = true;
         }
 
+        //called by button
         public void RestartGame()
         {
             Time.timeScale = 1;

@@ -3,7 +3,6 @@ using Players;
 
 namespace Effects
 {
-
     [RequireComponent(typeof(ParticleSystem))]
     public class ExhaustEffect : MonoBehaviour
     {

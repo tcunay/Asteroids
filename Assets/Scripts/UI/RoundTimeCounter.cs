@@ -32,6 +32,5 @@ namespace UI
             else
                 return value.ToString();
         }
-
     }
 }

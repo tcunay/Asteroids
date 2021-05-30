@@ -29,9 +29,7 @@ namespace Enemies
         private void TryToFollow()
         {
             if (_player != null)
-            {
                 ToFollow(_player.transform);
-            }
         }
 
         private void ToFollow(Transform target)
@@ -45,7 +43,5 @@ namespace Enemies
         {
             return (target.position - transform.position);
         }
-
-
     }
 }

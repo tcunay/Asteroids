@@ -8,8 +8,6 @@ namespace Players
     {
         private int _score;
 
-        public int Score => _score;
-
         public event UnityAction Dying;
         public event UnityAction<int> ScoreChanged;
 

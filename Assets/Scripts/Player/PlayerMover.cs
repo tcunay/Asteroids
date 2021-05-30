@@ -16,7 +16,7 @@ namespace Players
         { 
             get
             {
-                return _engine != 0;
+                return _engine > 0;
             }
         }
 
@@ -25,21 +25,10 @@ namespace Players
             _rigidbody = GetComponent<Rigidbody2D>();
         }
 
-        private void Update()
-        {
-            //SetEngine();
-            //SetTourqe();
-        }
-
         private void FixedUpdate()
         {
             Move();
             Rotate();
-        }
-
-        private void Move()
-        {
-            _rigidbody.AddForce(transform.up * _engine * _speedForce * Time.fixedDeltaTime, ForceMode2D.Force);
         }
 
         public void SetEngine(bool isEngine)
@@ -50,14 +39,19 @@ namespace Players
                 _engine = 0;
         }
 
-        private void Rotate()
-        {
-            _rigidbody.AddTorque(_tourque * _rotateSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
-        }
-
         public void SetTourqe(float tourque)
         {
             _tourque = tourque;
+        }
+
+        private void Move()
+        {
+            _rigidbody.AddForce(transform.up * _engine * _speedForce * Time.fixedDeltaTime, ForceMode2D.Force);
+        }
+
+        private void Rotate()
+        {
+            _rigidbody.AddTorque(_tourque * _rotateSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
         }
     }
 }

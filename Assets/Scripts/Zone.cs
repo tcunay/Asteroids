@@ -9,7 +9,7 @@ public class Zone : MonoBehaviour
 
     public Transform Center => transform;
 
-    public event UnityAction<Vector3[]> Creating;
+    public event UnityAction<Vector3[]> Created;
 
     private void Awake()
     {
@@ -29,6 +29,6 @@ public class Zone : MonoBehaviour
     private void SetBoudaryPoints(Vector3[] points)
     {
         _boundaryPoints = points;
-        Creating?.Invoke(_boundaryPoints);
+        Created?.Invoke(_boundaryPoints);
     }
 }

@@ -18,12 +18,12 @@ public class Spawner : MonoBehaviour
 
     private void OnEnable()
     {
-        _zone.Creating += SetSpawnPoints;
+        _zone.Created += SetSpawnPoints;
     }
 
     private void OnDisable()
     {
-        _zone.Creating -= SetSpawnPoints;
+        _zone.Created -= SetSpawnPoints;
     }
 
     private void Update()
