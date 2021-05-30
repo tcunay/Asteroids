@@ -26,6 +26,7 @@ namespace Weapons
         {
             _button.onClick.RemoveListener(() => Shoot(_ammo, _firePoint));
         }
+
         protected virtual void Update()
         {
             if (Input.GetKeyDown(_fireKey))
