@@ -12,6 +12,14 @@ namespace Players
         private float _tourque;
         private float _engine;
 
+        public bool IsEngine 
+        { 
+            get
+            {
+                return _engine != 0;
+            }
+        }
+
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();

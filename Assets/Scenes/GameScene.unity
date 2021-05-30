@@ -1298,6 +1298,10 @@ PrefabInstance:
       propertyPath: _button
       value: 
       objectReference: {fileID: 815046888}
+    - target: {fileID: 2180669005398143742, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5091663842466478420, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1526,7 +1530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2141882774
 Transform:
   m_ObjectHideFlags: 0
