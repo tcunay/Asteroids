@@ -19,7 +19,7 @@ namespace Weapons
 
         protected override void Shoot(Ammo ammo, Transform firePoint)
         {
-            if(true)//(_chargesQuantity > 0)
+            if(_chargesQuantity > 0)
             {
                 Ammo laser = Instantiate(ammo, firePoint);
                 AddList(laser);

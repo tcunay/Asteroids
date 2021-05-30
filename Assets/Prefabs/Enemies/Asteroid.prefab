@@ -20,9 +20,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3109690978439928026, guid: 3c7f1c337f6f63c4dad421f1fc58d9c8, type: 3}
+      propertyPath: _sidesQuantity
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4463161099202636654, guid: 3c7f1c337f6f63c4dad421f1fc58d9c8, type: 3}
       propertyPath: m_Mass
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4463161099202636654, guid: 3c7f1c337f6f63c4dad421f1fc58d9c8, type: 3}
       propertyPath: m_UseAutoMass

@@ -1,7 +1,7 @@
 using UnityEngine;
 using Weapons;
 
-namespace Player
+namespace Players
 {
     [RequireComponent(typeof(Player))]
     public class PlayerShoot : MonoBehaviour

@@ -1,10 +1,13 @@
 using UnityEngine;
 
-[RequireComponent(typeof(PolygonCollider2D))]
-public class ShapeCreatorWithPoligonCollider2D : ShapeCreator<PolygonCollider2D>
+namespace ShapeCreators
 {
-    protected override void SetPointsInCollider(Vector2[] points, PolygonCollider2D collider2D)
+    [RequireComponent(typeof(PolygonCollider2D))]
+    public class ShapeCreatorWithPoligonCollider2D : ShapeCreator<PolygonCollider2D>
     {
-        collider2D.points = points;
+        protected override void SetPointsInCollider(Vector2[] points, PolygonCollider2D collider2D)
+        {
+            collider2D.points = points;
+        }
     }
 }

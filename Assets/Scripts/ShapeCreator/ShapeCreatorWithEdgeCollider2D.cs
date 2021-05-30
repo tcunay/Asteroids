@@ -1,10 +1,13 @@
 using UnityEngine;
 
-[RequireComponent(typeof(EdgeCollider2D))]
-public class ShapeCreatorWithEdgeCollider2D : ShapeCreator<EdgeCollider2D>
+namespace ShapeCreators
 {
-    protected override void SetPointsInCollider(Vector2[] points, EdgeCollider2D collider2D)
+    [RequireComponent(typeof(EdgeCollider2D))]
+    public class ShapeCreatorWithEdgeCollider2D : ShapeCreator<EdgeCollider2D>
     {
-        collider2D.points = points;
+        protected override void SetPointsInCollider(Vector2[] points, EdgeCollider2D collider2D)
+        {
+            collider2D.points = points;
+        }
     }
 }

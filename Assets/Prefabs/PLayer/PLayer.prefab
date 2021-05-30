@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c52fb797ae2da9043a3d180bfe80dbb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ammo: {fileID: 0}
+  _ammo: {fileID: -9191401121113869798, guid: 58459731eae466a42848bb2a0a5e7a3c, type: 3}
   _firePoint: {fileID: 2671067724200614312}
   _fireKey: 323
 --- !u!114 &553234746978726346
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e805311ca08654fa3e59d11201e621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ammo: {fileID: 0}
+  _ammo: {fileID: 3479241318122232178, guid: 3ea90b905f220c446bedc5f1e5bf8bfd, type: 3}
   _firePoint: {fileID: 2671067724200614312}
   _fireKey: 324
 --- !u!114 &-5940459294983903286

@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     private int _countAtOneTime;
     private float _elapsedTime;
     private float _centerOffset = 3;
+    private bool _isSpawnPointsCompleted = false;
 
     private void OnEnable()
     {
@@ -32,6 +33,9 @@ public class Spawner : MonoBehaviour
 
     private void TrySpawn()
     {
+        if (_isSpawnPointsCompleted == false)
+            return;
+
         _elapsedTime += Time.deltaTime;
         if (IsFull() == false)
         {
@@ -79,6 +83,8 @@ public class Spawner : MonoBehaviour
         {
             _spawnPoints[i] = Direct—loserToCenter(points[i]);
         }
+
+        _isSpawnPointsCompleted = true;
     }
 
     private Vector3 Direct—loserToCenter(Vector3 point)

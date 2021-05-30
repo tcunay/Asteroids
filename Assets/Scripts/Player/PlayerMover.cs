@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Player
+namespace Players
 {
 
     [RequireComponent(typeof(Rigidbody2D))]
