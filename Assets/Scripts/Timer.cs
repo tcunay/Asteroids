@@ -6,6 +6,7 @@ public class Timer : MonoBehaviour
 {
     private int _currentTime;
     private float _oneSecond = 1;
+    private bool _isTicking;
 
     public event UnityAction<int> TimeTicked;
     public event UnityAction TickEnded;
@@ -13,7 +14,17 @@ public class Timer : MonoBehaviour
     public void Start—ountdown(int time)
     {
         _currentTime = time;
+        _isTicking = true;
         StartCoroutine(TickTime());
+    }
+
+    public void StopTick()
+    {
+        if (_isTicking == true)
+        {
+            _isTicking = false;
+            TickEnded?.Invoke();
+        }
     }
 
     private IEnumerator TickTime()
@@ -24,11 +35,11 @@ public class Timer : MonoBehaviour
         TimeTicked?.Invoke(_currentTime);
 
         if (_currentTime == 0)
-        {
-            TickEnded?.Invoke();
-            yield break;
-        }
+            StopTick();
 
-        StartCoroutine(TickTime());
+        if (_isTicking)
+            StartCoroutine(TickTime());
+        else
+            yield break;
     }
 }

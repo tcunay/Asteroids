@@ -26,18 +26,32 @@ namespace UI
 
         private void Update()
         {
-            _timeAnimation += (Time.deltaTime / _laserWeapon.OneAddChargeTime);
-            if (_laserWeapon.IsReplenished)
-            {
-                _loadChargeImage.fillAmount = Mathf.Lerp(0, 1, 1);
-            }
-            if (_timeAnimation == 1)
-                _timeAnimation = 0;
+            TryStartReplenishingAnimation();
         }
 
         private void OnChargeChanged(int charges)
         {
             _chargeText.text = charges.ToString();
+            ResetReplenishingAnimation();
+        }
+
+        private void TryStartReplenishingAnimation()
+        {
+            if (_laserWeapon.IsReplenished)
+            {
+                StartReplenishingAnimation();
+            }
+        }
+
+        private void StartReplenishingAnimation()
+        {
+            _timeAnimation += (Time.deltaTime / _laserWeapon.OneAddChargeTime);
+            _loadChargeImage.fillAmount = Mathf.Lerp(0, 1, _timeAnimation);
+        }
+
+        private void ResetReplenishingAnimation()
+        {
+            _timeAnimation = 0;
         }
     }
 }

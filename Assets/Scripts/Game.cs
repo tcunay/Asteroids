@@ -36,6 +36,7 @@ namespace Game
 
             _player.gameObject.SetActive(false);
             _missionFailedMenu.SetActive(true);
+            _timer.StopTick();
             _isGameOver = true;
         }
 
