@@ -16,12 +16,14 @@ namespace UI
 
         private void OnEnable()
         {
-            _laserWeapon.ChargesChanged += OnChargeChanged;
+            _laserWeapon.ChargesIncreased += OnChargeIncreased;
+            _laserWeapon.ChargesDecreased += OnChargeDecreased;
         }
 
         private void OnDisable()
         {
-            _laserWeapon.ChargesChanged -= OnChargeChanged;
+            _laserWeapon.ChargesIncreased -= OnChargeIncreased;
+            _laserWeapon.ChargesDecreased -= OnChargeDecreased;
         }
 
         private void Update()
@@ -29,10 +31,20 @@ namespace UI
             TryStartReplenishingAnimation();
         }
 
-        private void OnChargeChanged(int charges)
+        private void OnChargeDecreased(int charges)
+        {
+            SetChargeCount(charges);
+        }
+
+        private void OnChargeIncreased(int charges)
+        {
+            SetChargeCount(charges);
+            ResetReplenishingAnimation();
+        }
+
+        private void SetChargeCount(int charges)
         {
             _chargeText.text = charges.ToString();
-            ResetReplenishingAnimation();
         }
 
         private void TryStartReplenishingAnimation()

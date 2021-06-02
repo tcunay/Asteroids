@@ -16,7 +16,8 @@ namespace Weapons
 
         public bool IsReplenished => _isReplenished;
 
-        public event UnityAction<int> ChargesChanged;
+        public event UnityAction<int> ChargesDecreased;
+        public event UnityAction<int> ChargesIncreased;
 
         protected override void Update()
         {
@@ -31,7 +32,7 @@ namespace Weapons
                 Ammo laser = Instantiate(ammo, firePoint);
                 AddList(laser);
                 _chargesQuantity--;
-                ChargesChanged?.Invoke(_chargesQuantity);
+                ChargesDecreased?.Invoke(_chargesQuantity);
             }
         }
 
@@ -48,7 +49,7 @@ namespace Weapons
             yield return new WaitForSeconds(_oneAddChargeTime);
 
             _chargesQuantity++;
-            ChargesChanged?.Invoke(_chargesQuantity);
+            ChargesIncreased?.Invoke(_chargesQuantity);
             _isReplenished = false;
         }
     }
