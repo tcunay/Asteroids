@@ -50,8 +50,8 @@ namespace ShapeCreators
             for (int i = 0; i < anglePoints.Length; i++)
             {
                 float radius = GetRandomRadius();
-                anglePoints[i].x = -(int)Mathf.Round(Mathf.Cos(angle / 180 * Mathf.PI) * radius);
-                anglePoints[i].y = (int)Mathf.Round(Mathf.Sin(angle / 180 * Mathf.PI) * radius);
+                anglePoints[i].x = -(Mathf.Cos(angle / 180 * Mathf.PI) * radius);
+                anglePoints[i].y = +(Mathf.Sin(angle / 180 * Mathf.PI) * radius);
 
                 angle += CalculateOneAngle(_sidesQuantity);
             }

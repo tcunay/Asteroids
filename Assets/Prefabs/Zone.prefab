@@ -180,4 +180,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minRadius: 11
   _maxRadius: 11
-  _sidesQuantity: 20
+  _sidesQuantity: 60
