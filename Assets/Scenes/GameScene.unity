@@ -1298,10 +1298,6 @@ PrefabInstance:
       propertyPath: _button
       value: 
       objectReference: {fileID: 815046888}
-    - target: {fileID: 2180669005398143742, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}
-      propertyPath: VelocityModule.y.scalar
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5091663842466478420, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1345,6 +1341,14 @@ PrefabInstance:
     - target: {fileID: 5091663842466478420, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091663842466478421, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}
+      propertyPath: _speedForce
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091663842466478421, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}
+      propertyPath: _rotateSpeed
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 5091663842466478424, guid: 9c4a7cf4eb9fd2240a5a8426cc8692d7, type: 3}
       propertyPath: m_Name
