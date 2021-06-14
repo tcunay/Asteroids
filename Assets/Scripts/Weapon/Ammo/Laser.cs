@@ -39,7 +39,7 @@ namespace Weapons.Ammunition
             }
 
 #if UNITY_EDITOR
-            Debug.DrawRay(transform.position, transform.up * _distanceLineRaender);
+            Debug.DrawRay(startPosition, endPosition);
 #endif
         }
 

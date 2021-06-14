@@ -8,7 +8,7 @@ namespace Weapons.Ammunition
         [SerializeField] private float _lifeTime;
 
         public event UnityAction Killed;
-        public event UnityAction Die;
+        public event UnityAction Died;
 
         protected virtual void Start()
         {
@@ -17,7 +17,7 @@ namespace Weapons.Ammunition
 
         private void OnDestroy()
         {
-            Die?.Invoke();
+            Died?.Invoke();
         }
 
         protected abstract void Shot();

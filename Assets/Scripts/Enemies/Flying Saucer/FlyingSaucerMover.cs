@@ -34,9 +34,7 @@ namespace Enemies
 
         private void ToFollow(Transform target)
         {
-            Vector2 direction = GetFollowDirection(target);
-
-            _rigidbody.AddForce(direction.normalized * _speedForce * Time.fixedDeltaTime);
+            _rigidbody.AddForce(GetFollowDirection(target).normalized * _speedForce * Time.fixedDeltaTime);
         }
 
         private Vector2 GetFollowDirection(Transform target)

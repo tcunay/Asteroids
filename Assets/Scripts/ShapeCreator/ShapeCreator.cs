@@ -15,7 +15,7 @@ namespace ShapeCreators
         private LineRenderer _lineRenderer;
         private Vector3[] _angleClosedPoints;
 
-        public event UnityAction<Vector3[]> Creating;
+        public event UnityAction<Vector3[]> Created;
 
         private void Awake()
         {
@@ -39,7 +39,7 @@ namespace ShapeCreators
             SetPointsInCollider(ConvertToVector2DArray(_angleClosedPoints), _collider2D);
             _lineRenderer.SetPositions(_angleClosedPoints);
 
-            Creating?.Invoke(_angleClosedPoints);
+            Created?.Invoke(_angleClosedPoints);
         }
 
         private Vector3[] CalculatePoints()

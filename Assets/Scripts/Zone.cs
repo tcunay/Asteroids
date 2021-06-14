@@ -18,12 +18,12 @@ public class Zone : MonoBehaviour
 
     private void OnEnable()
     {
-        _shapeCreator.Creating += SetBoudaryPoints;
+        _shapeCreator.Created += SetBoudaryPoints;
     }
 
     private void OnDisable()
     {
-        _shapeCreator.Creating -= SetBoudaryPoints;
+        _shapeCreator.Created -= SetBoudaryPoints;
     }
 
     private void SetBoudaryPoints(Vector3[] points)
