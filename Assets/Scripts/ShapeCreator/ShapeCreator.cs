@@ -30,7 +30,7 @@ namespace ShapeCreators
 
         protected abstract void SetPointsInCollider(Vector2[] points, T collider2D);
 
-        public void Create()
+        private void Create()
         {
             _lineRenderer.positionCount = _sidesQuantity + 1;
 
