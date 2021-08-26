@@ -27,7 +27,7 @@ namespace Game
 
         private void Start()
         {
-            _timer.Start—ountdown(_gameTime);
+            _timer.DoStart(_gameTime);
         }
 
         public void OnGameOver()
